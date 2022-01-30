@@ -10,6 +10,7 @@
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/mycustomjs.js"></script>
 </head>
 
 <body>
@@ -27,7 +28,7 @@
           </button>
         </div>
         <div class="modal-body container">
-          <form>
+          <form id="myform" method="GET" action="">
             <div class="form-group">
               <h6 class="text-strong">Evaluate OnPrintShop Platinum W2P Solution before Making a Decision</h6>
               <p>We are confident that our solution is intuitive & simple to use with the least IT skills.
@@ -35,20 +36,25 @@
               <h6 class="text-strong">Simply enter details below and receive an email to access your Demo Account.</h6>
               <div class="row">
                 <div class="col-6 mt-3">
-                  <input class="form-control" type="text" placeholder="Full Name" title="YourName">
+                  <input class="form-control" type="text" placeholder="Full Name" id="name" name="name" title="YourName">
+                  <span class="text-danger d-none" id="first_name_error">This Field is required</span>
                 </div>
                 <div class="col-6 mt-3">
-                  <input class="form-control" type="email" placeholder="Email ID" title="Your email">
+                  <input class="form-control" type="email" placeholder="Email ID" title="Your email" id="email" name="email">
+                  <span class="text-danger d-none">This Field is required</span>
                 </div>
                 <div class="col-6 mt-3">
-                  <input class="form-control" type="tel" placeholder="Phone No." title="Your Contact Number">
+                  <input class="form-control" type="tel" placeholder="Phone No." title="Your Contact Number" id="contact_num" name="contact_number">
+                  <span class="text-danger d-none" id="contact_error">This Field is required</span>
                 </div>
                 <div class="col-6 mt-3">
-                  <input class="form-control" type="text" placeholder="Country" title="Your Country">
+                  <input class="form-control" type="text" placeholder="Country" title="Your Country" id="country" name="country">
+                  <span class="text-danger d-none" id="country_error">This Field is required</span> 
                 </div>
                 <div class="col-12 mt-3">
                   <textarea class="form-control" type="text" placeholder="Share Your Requirements"
-                    title="Your Requirements"></textarea>
+                    title="Your Requirements" id="user_requirement" name="user_requirement"></textarea>
+                   
                 </div>
               </div>
             </div>
@@ -66,7 +72,7 @@
               </div>
               <div class="col-6">
                 <button type="reset" class="btn btn-link float-right">Reset</button>
-                <button type="submit" class="btn btn-primary float-right">Submit</button>
+                <button id="mybtn" class="btn btn-primary float-right">Submit</button>
               </div>
 
             </div>
@@ -83,24 +89,7 @@
     </div>
   </div>
 
-  <script>
-    $(document).ready(function () {
-      $('#exampleModal').modal('show');
-
-      /**
-      *captcha text generate
-      */
-      $("#captcha_refresh").click(function(){
-        $("#captcha_text").text(Math.floor(100000 + Math.random() * 900000));
-        var colors = ['#ff0000', '#00ff00', '#0000ff'];
-        var random_color = colors[Math.floor(Math.random() * colors.length)];
-        $("#captcha_text").css('color',random_color);
-
-      });
-
-
-    });
-  </script>
+ 
 </body>
 
 </html>

@@ -1,0 +1,198 @@
+git config --global user.email "mayank.radixweb@gmail.com"
+git config --global user.name "radixweb1947"
+git config --global user.password "#Radixweb8"
+git status
+git add *.txt
+git reset HEAD *.txt (for revert file from stage to unstage)
+git commit -m "#REFS 123 test file commit from vscode" (no need to define file name it will commit all file that are added or add stage)
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)//this cmd will publish your all commit on github
+
+git rm filename //use for delete file and before git push u can revert the file using below cmd
+git reset HEAD yourfilename
+
+want to commit other user repo 
+Before git push do following steps::
+Either specify the URL from the command-line or configure a remote repository using
+git remote add origin https://github.com/radixweb1947/rahshak.git
+
+git remote -v
+git config -l
+git init       // use to intiate git repo
+rm -rf .git   //use to remove .git
+
+git branch new_branch // how to create branch
+
+git branch -d branch_name  //use to delte branch from local
+
+git checkout -b ＜new-branch＞
+Git vs SVN commands
+==================================
+      svn       |      git
+================|=======================
+svn checkout    | git clone
+svn commit      | git commit then git push // to publish local commit to remote repo.
+svn cat         | git show
+svn status      | git status
+svn diff        | git diff
+svn log         | git log
+svn add         | git add
+svn mv          | git mv
+svn rm          | git rm
+svn merge       | git merge
+svn update      | git pull / git fetch
+.svnignore      | gitignore
+
+Revert in SVN is the cancel of change, but Revert in Git is the commit for negation. The meanings of Revert are different.
+Branch and tag are the same in the structure in SVN, but they are clearly different in Git
+SVN does not have the concept of local repository/remote repository, accordingly commit is directly reflected in the remote. However, Git has different reflecting methods for reflecting to the local repository and for reflecting to the remote repository.
+
+
+
+
+
+
+
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+
+
+
+
+
+Step to checkout all old project from github ::
+=================================================
+create your project folder 
+-> git init 
+-> git pull <url>
+-> git add filename
+-> git commit -m "message"
+-> git remote add origin <url>
+-> git push --set-upstream origin master //for 1st time 
+-> git push 
+
+after this we recived pull request from other user.
+Now need to review the code if everyting seems good then do pull request and merge the master branch code to other repository
+
+you can manully update by login your github account.
+		or 
+you can also do this by cmd
+Step 1: From your project repository, bring in the changes and test.
+	git fetch origin
+	git checkout -b master origin/master
+	git merge main
+Step 2: Merge the changes and update on GitHub.
+	git checkout main
+	git merge --no-ff master
+	git push origin main
+
+
+https://github.com/radixweb1947/radixweb1947.git
+
+git remote set-url origin https://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@github.com/radixweb1947/radixweb1947.git
+
+git remote set-url origin https://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@github.com/radixweb1947/api.git
+
+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
+
+git@github.com:radixweb1947/api.git
+
+
+git clone https://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@github.com/<user>/<repo>.git
+
+
+
+
+
+
+
+
+git status only modified files :
+git ls-files -m
+
+git branch --all
+git log
+git log <branch_name> //for see secific branch
+git log <branch_name> --not <master_branch_name>
+git show a303aa90779efdd2f6b9d90693e2cbbbe4613c1d
+
+https://devconnected.com/how-to-git-reset-to-head/
+
+
+
+
+
+
+
+
+
+
+
+
+
+If you want to rename a branch while pointed to any branch, do:
+
+git branch -m <oldname> <newname>
+If you want to rename the current branch, you can do:
+
+git branch -m <newname>
+If you want to push the local branch and reset the upstream branch:
+
+git push origin -u <newname>
+And finally if you want to Delete the remote branch:
+
+git push origin --delete <oldname>
+
+
+
+
+
+How to merge branch code...
+You can merge this merge request manually using the 
+Step 1. Fetch and check out the branch for this merge request
+git fetch origin
+git checkout -b "Ref-211607-set-common-price-for-all-attribute-options" "origin/Ref-211607-set-common-price-for-all-attribute-options"
+Step 2. Review the changes locally
+Step 3. Merge the branch and fix any conflicts that come up
+git fetch origin
+git checkout "development"
+git merge --no-ff "Ref-211607-set-common-price-for-all-attribute-options"
+Step 4. Push the result of the merge to GitLab
+Note that pushing to GitLab requires write access to this repository.
+
+
+
+How to change the URI (URL) for a remote Git repository?
+git remote set-url origin new.git.url/here
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
